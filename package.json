@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Getting started with Node & Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otteru/nodejs-practice.git"
+  },
+  "author": "otteru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/otteru/nodejs-practice/issues"
+  },
+  "homepage": "https://github.com/otteru/nodejs-practice#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
