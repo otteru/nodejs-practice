@@ -27,10 +27,29 @@ app.post("/store-user", function(req, res) {
 	
 	existingUsers.push(userName);
 	
-	fs.writeFileSync(filePath, JSON.stringify(existingUsers));
+	fs.writeFileSync(filePath, JSON.stringify( existingUsers));
 	//JSON.stringify(existingUsers) 자바 스크립트가 아니라 스트링을 보내야 해서 이 작업을 ㅎ
 	res.send("<h1>Username stored!</h1>");
 });
+
+app.get("/users", function(req, res) {
+	const filePath = path.join(__dirname, "data", "users.json");
+	
+	const fileData = fs.readFileSync(filePath);
+	const existingUsers = JSON.parse(fileData);
+	
+	let responseData = "<ul>";
+	
+	for (const user of existingUsers) {
+		responseData += "<li>" + user + "</li>";
+	}
+	
+	responseData += "</ul>"
+ 	
+	res.send(responseData);
+	
+	
+})
 
 app.listen(3000);
 
